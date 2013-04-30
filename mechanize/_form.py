@@ -404,8 +404,8 @@ class _AbstractFormParser:
 
     def start_form(self, attrs):
         debug("%s", attrs)
-        if self._current_form is not self._global_form:
-            raise ParseError("nested FORMs")
+        #if self._current_form is not self._global_form:
+        #    raise ParseError("nested FORMs")
         name = None
         action = None
         enctype = "application/x-www-form-urlencoded"
@@ -1215,8 +1215,8 @@ class ScalarControl(Control):
         if name == "value":
             if not isstringlike(value):
                 raise TypeError("must assign a string")
-            elif self.readonly:
-                raise AttributeError("control '%s' is readonly" % self.name)
+            #elif self.readonly:
+            #    raise AttributeError("control '%s' is readonly" % self.name)
             elif self.disabled:
                 raise AttributeError("control '%s' is disabled" % self.name)
             self.__dict__["_value"] = value
